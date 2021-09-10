@@ -22,4 +22,5 @@ class Advert extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    
 }

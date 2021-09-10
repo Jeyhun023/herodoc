@@ -4,80 +4,79 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 left">
-                    <h2>I will do mobile and website wireframes and prototyping</h2>
+                    <h2>{{$advert->name}}</h2>
                     <div id="overview" class="seller-overview d-flex align-items-center">
                         <div class="user-profile-image d-flex">
                             <label class="profile-pict" for="profile_image">
-                                <img src="/front/images/user/s2.png" class="profile-pict-img img-fluid" alt="">
+                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="">
                             </label>
                             <div class="profile-name">
                                 <span class="user-status">
-                                    <a href="#" class="seller-link">Askbootstrap</a>
+                                    <a href="{{route('user.show', ['user'=>$advert->user->username])}}" class="seller-link">{{$advert->user->fullname}}</a>
                                 </span>
                             </div>
                         </div>
                         <div class="user-info d-flex">
                             <span class="user-info-rating d-flex">
                                 <div class="star-rating-s15-wrapper">
-                                    <span class="star-rating-s15 rate-10">
-                                    </span>
+                                    @for($x = 1; $x<=5; $x++)
+                                        <span class="gig-rating text-body-2" @if($x <= $advert->user->rate) style="color: #ffbf00;" @endif>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                                                <path fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    @endfor
                                 </div>
-                                <span class="total-rating-out-five">5.0</span>
+                                <span class="total-rating-out-five" style="margin-top: 4px;">{{$advert->user->rate}}.0</span>
                             </span>
-                            <span class="orders-in-queue">Gorduyu is</span>
+                            <span class="orders-in-queue">Görülən iş: {{$orders_no}}</span>
                         </div>
                     </div>
                     <div class="slider mt-4">
-                        <img class="img-fluid" src="/front/images/list/v1.png" />
+                        <img class="img-fluid" src="{{$advert->image}}" />
                     </div>
                     <div id="description" class="description">
-                        <p>I have 7+ years of experience in Mobile App & Web Wireframing & Mobile app UI</p>
+                        <p>{{$advert->content}}</p>
                     </div>
                     <ul class="metadata"></ul>
 
                     <div id="reviews" class="review-section">
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h4 class="m-0"> 37 Comment </h4>
+                            <h4 class="m-0"> {{$advert->user->comments_count}} Komment </h4>
                         </div>
                     </div>
                     <div class="review-list">
                         <ul>
-                            <li>
-                                <div class="d-flex">
-                                    <div class="left">
-                                        <span>
-                                            <img src="/front/images/user/s5.png" class="profile-pict-img img-fluid" alt="">
-                                        </span>
-                                    </div>
-                                    <div class="right">
-                                        <h4>
-                                            Askbootstrap
-                                            <span class="gig-rating text-body-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
-                                                    height="15">
-                                                    <path fill="currentColor"
-                                                        d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                    </path>
-                                                </svg>
-                                                5.0
-                                            </span>
-                                        </h4>
-                                        <div class="country d-flex align-items-center">
+                            @foreach($advert->user->comments as $comment)
+                                <li>
+                                    <div class="d-flex">
+                                        <div class="left">
                                             <span>
-                                                <img class="country-flag img-fluid" src="/front/images/flag/india.png">
+                                                <img src="{{$comment->user->image}}" class="profile-pict-img img-fluid" alt="">
                                             </span>
-                                            <div class="country-name font-accent">India</div>
                                         </div>
-                                        <div class="review-description">
-                                            <p>
-                                                The process was smooth, after providing the required info,
-                                                Pragyesh sent me an outstanding packet of wireframes. Thank you a lot!
-                                            </p>
+                                        <div class="right">
+                                            <h4>
+                                                {{$comment->user->username}}
+                                                <span class="gig-rating text-body-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                        height="15">
+                                                        <path fill="currentColor"
+                                                            d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                        </path>
+                                                    </svg>
+                                                    {{$comment->rate}}.0
+                                                </span>
+                                            </h4>
+                                            <div class="review-description">
+                                                <p>{{$comment->content}}</p>
+                                            </div>
+                                            <span class="publish py-3 d-inline-block w-100">{{$comment->created_at->format('d.m.Y')}}</span>
                                         </div>
-                                        <span class="publish py-3 d-inline-block w-100">Published 4 weeks ago</span>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -85,53 +84,41 @@
                     <div class="profile-card">
                         <div class="user-profile-image d-flex">
                             <label class="profile-pict" for="profile_image">
-                                <img src="/front/images/user/s2.png" class="profile-pict-img img-fluid" alt="">
+                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="">
                             </label>
                             <div class="right">
                                 <div class="profile-name">
                                     <span class="user-status">
-                                        <a href="#" class="seller-link">Askbootstrap</a>
+                                        <a href="{{route('user.show', ['user'=>$advert->user->username])}}" class="seller-link">{{$advert->user->username}}</a>
                                     </span>
-                                    <div class="seller-level">Website and mobile wireframes UI UX </div>
+                                    <div class="seller-level">{{$advert->user->jobname}}</div>
                                 </div>
                                 <div class="user-info">
                                     <span class="user-info-rating d-flex align-items-center">
                                         <div class="star-rating-s15-wrapper">
-                                            <span class="star-rating-s15 rate-10">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </span>
+                                            @for($x = 1; $x<=5; $x++)
+                                                <span class="gig-rating text-body-2" @if($x <= $advert->user->rate) style="color: #ffbf00;" @endif>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                                                        <path fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                            @endfor
                                         </div>
-                                        <span class="total-rating-out-five">5.0</span>
-                                        <span class="total-rating">(36 reviews)</span>
+                                        <span class="total-rating-out-five"  style="margin-top: 4px;">{{$advert->user->rate}}.0</span>
+                                        <span class="total-rating" style="margin-top: 4px;">({{$advert->user->comments_count}} komment)</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div class="stats-desc">
                             <ul class="user-stats">
-                                <li>From<strong>India</strong></li>
-                                <li>Member since<strong>Sep 2018</strong></li>
-                                <li>Avg. Response Time<strong>1 hour</strong></li>
+                                <li>Şəhər<strong>{{$advert->user->city}}</strong></li>
+                                <li>Qeydiyyat<strong>{{$advert->user->created_at->format('d.m.Y')}}</strong></li>
+                                <li>Ortalama cavab vaxtı<strong>20 dəqiqə</strong></li>
                             </ul>
                             <article class="seller-desc">
-                                <div class="inner">- Wireframes for mobile apps &amp; Website <br />
-                                    - Flowcharts for the whole system <br />
-                                    - Mobile app prototypes, interactive UI designs <br />
-                                    - UI for social media postings <br />
-                                    - Design an app to achieve a business objective (web or mobile). <br />
-                                    - Design or re-design a website to grow revenue, close more sales and generate more
-                                    leads.
-                                    <br />
-                                    - Optimize their existing website with a conversion rate audit and strategy. <br />
-                                    - Design a high converting landing page. <br />
-                                    <span>Excellent communication and availability.
-                                        Reach me any time during our project on Whatsapp, Skype, Text or any other
-                                        messenger.</span>
-                                </div>
+                                <div class="inner">{!!$advert->user->description!!}</div>
                             </article>
                         </div>
 
@@ -143,40 +130,33 @@
                         <div class="tab-content">
                             <div id="basic" class="tab-pane fade show active">
                                 <div class="header">
-                                    <h3><b class="title">10 Screens</b><span class="price">$8,029</span>
+                                    <h3><b class="title">Qiymət</b><span class="price">{{$advert->price}} AZN</span>
                                     </h3>
-                                    <p>I will design rough sketches for upto 5 Screens of your website/Mobile app.
-                                    </p>
+                                    <p>{{$advert->short_desc}}</p>
                                 </div>
                                 <article>
                                     <div class="d-flex">
-                                        <b class="delivery"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 Days
-                                            Delivery</b>
-                                        <b class="delivery ml-3"><i class="fa fa-refresh" aria-hidden="true"></i> 1
-                                            Revision</b>
+                                        <b class="delivery"><i class="fa fa-clock-o" aria-hidden="true"></i> {{$advert->delivery}}</b>
+                                        <b class="delivery ml-3"><i class="fa fa-refresh" aria-hidden="true"></i> 3 Reviziya</b>
                                     </div>
                                     <ul class="features">
                                         <li class="feature included"><i class="fa fa-check" aria-hidden="true"></i>Source
-                                            File
+                                            Fayllar
                                         </li>
                                         <li class="feature included"><i class="fa fa-check"
-                                                aria-hidden="true"></i>Commercial
-                                            Use
-                                        </li>
-                                        <li class="feature"><i class="fa fa-check"
-                                                aria-hidden="true"></i>Interactive
-                                            Mockup
+                                                aria-hidden="true"></i>
+                                            İstifadə qaydası
                                         </li>
                                         <li class="feature included"><i class="fa fa-check" aria-hidden="true"></i>10
-                                            Pages
+                                            Müəllif hüquqları
                                         </li>
                                     </ul>
                                 </article>
-                                <button>Continue ($8,029)</button>
+                                <button>Müraciət et</button>
                                 <div class="mobileShow">
                                     <button type="button" style="border-radius:40px" data-toggle="modal"
                                         data-target="#exampleModal">
-                                        Müraciət et ($8,029)
+                                        Müraciət et
                                     </button>
                                 </div>
                             </div>
@@ -192,9 +172,11 @@
                     <div class="col-lg-12">
                         <h3>Tövsiyyə olunanlar</h3>
                         <div class="row">
-                            <div class="col-lg-6">
-                                @include('front.shared.job-card')
-                            </div>
+                            @foreach($suggestions as $suggest)
+                                <div class="col-lg-6">
+                                    @include('front.shared.job-card', ['advert' => $suggest])
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

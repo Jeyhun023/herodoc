@@ -56,4 +56,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserComment::class, 'to_user_id', 'id');
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    
+    public function adverts()
+    {
+        return $this->hasMany(Advert::class);
+    }
 }

@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('advert_id');
             $table->unsignedBigInteger('user_id');
-            $table->enum('isFreelance', ['waiting','loading','finished','rejected'])->default('waiting');
+            $table->enum('status', ['waiting','loading','finished','rejected'])->default('waiting');
             $table->string('order_no');
             $table->integer('payment')->comment('AZN');
             $table->timestamps();
