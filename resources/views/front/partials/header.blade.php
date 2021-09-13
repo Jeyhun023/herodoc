@@ -88,8 +88,7 @@
                                 <div class="dropdown-notifications-item-content-details">Diane Chambers · 2d</div>
                             </div>
                         </a>
-                        <a class="dropdown-item dropdown-notifications-footer" href="messages.html">Read All
-                            Messages</a>
+                        <a class="dropdown-item dropdown-notifications-footer" href="{{route("message.index")}}">Hamısını oxu</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown no-arrow no-caret dropdown-user">

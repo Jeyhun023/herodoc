@@ -11,9 +11,7 @@ class UserComment extends Model
 
     public $table = "user_comments";
     
-    protected $fillable = ['from_user_id','to_user_id','content'];
-
-    protected $guarded = ['rate'];
+    protected $fillable = ['from_user_id','to_user_id','content','rate'];
 
     public function user()
     {

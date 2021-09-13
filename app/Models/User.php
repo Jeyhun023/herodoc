@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cache;
 
 class User extends Authenticatable
 {
@@ -65,5 +66,20 @@ class User extends Authenticatable
     public function adverts()
     {
         return $this->hasMany(Advert::class);
+    }
+
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
+    }
+    
+    public function chat_users()
+    {
+        return $this->hasMany(ChatUser::class);
+    }
+
+    public function chat_user()
+    {
+        return $this->hasOne(ChatUser::class);
     }
 }

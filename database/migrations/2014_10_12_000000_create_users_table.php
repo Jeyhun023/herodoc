@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->integer('rate')->default(0);
             $table->enum('isFreelance', ['no','yes'])->default('no');
-            $table->string('image')->default('no_photo.png');
+            $table->string('image')->default('/front/images/user/no_photo.jpg');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
