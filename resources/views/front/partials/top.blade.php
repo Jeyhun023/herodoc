@@ -8,6 +8,6 @@
     <link href="/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/front/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/front/vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
-    <link href="/front/css/style.css" rel="stylesheet">
+    <link href="/front/css/style.css?v=1.1" rel="stylesheet">
     @stack('css')
 </head>

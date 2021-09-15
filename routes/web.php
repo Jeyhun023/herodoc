@@ -24,7 +24,8 @@ Route::get('/loadChats', [App\Http\Controllers\Front\MessageController::class, '
 Route::get('/applyChat/{user}', [App\Http\Controllers\Front\MessageController::class, 'applyChat'])->name('message.applyChat');
 
 Route::get('/messages/{chat}', [App\Http\Controllers\Front\MessageController::class, 'show'])->name('message.show');
-Route::get('/lastMessages/{chat}', [App\Http\Controllers\Front\MessageController::class, 'lastMessages'])->name('message.lastMessages');
+Route::get('/loadMessages/{chat}/{first_message_id}', [App\Http\Controllers\Front\MessageController::class, 'loadMessages'])->name('message.loadMessages');
+Route::get('/lastMessages/{chat}/{last_message_id}', [App\Http\Controllers\Front\MessageController::class, 'lastMessages'])->name('message.lastMessages');
 Route::post('/sendMessages/{chat}', [App\Http\Controllers\Front\MessageController::class, 'sendMessages'])->name('message.sendMessages');
 
 Route::get('/profile/{user}', [App\Http\Controllers\Front\UserController::class, 'show'])->name('user.show');

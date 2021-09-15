@@ -69,23 +69,40 @@ class MessageController extends Controller
 
     public function show($chat)
     {
+        $chat = Chat::whereHas('chat_users', function($q){
+            $q->where('user_id', auth()->user()->id);
+        })
+        ->with(['messages', 'opponent_user.user'])
+        ->where('code', $chat)
+        ->firstOrFail();
+
+        $chat->messages = $chat->messages->reverse();
+        
         return view('front.pages.message', compact('chat'));
     }
 
-    public function lastMessages($chat)
+    public function lastMessages($chat,$last_message_id)
     {
-        $chat = Chat::whereHas('chat_users', function($q){
-                $q->where('user_id', auth()->user()->id);
+        $user = auth()->user();
+        $chat = Chat::whereHas('chat_users', function($q) use($user) {
+                $q->where('user_id', $user->id);
             })
-            ->with(['messages', 'opponent_user.user'])
+            ->with(['messages' => function($query) use($user, $last_message_id) {
+                $query->where('user_id_to', $user->id);
+                $query->where('id', '>', $last_message_id);
+            }])
             ->where('code', $chat)
             ->firstOrFail();
-
         $chat->messages = $chat->messages->reverse();
+       
+        $data['html'] = view('front.shared.message-card', compact('chat'))->render(); 
+        $data['last_message_id'] = $last_message_id;
+         
+        if($chat->messages->isNotEmpty()){
+            $data['last_message_id'] = $chat->messages->last()->id;
+        }  
 
-        $html = view('front.shared.message-card', compact('chat'))->render();   
-
-        return response()->json($html, 200);
+        return response()->json($data, 200);
       
     }
 
@@ -113,5 +130,29 @@ class MessageController extends Controller
         $chat->update(['last_activity' => $data['message']->created_at]);
         
         return response()->json($data, 200);
+    }
+
+    public function loadMessages($chat, $first_message_id)
+    {
+        $user = auth()->user();
+        $chat = Chat::whereHas('chat_users', function($q) use($user) {
+                $q->where('user_id', $user->id);
+            })
+            ->with(['messages' => function($query) use($user, $first_message_id) {
+                $query->where('id', '<', $first_message_id);
+            }])
+            ->where('code', $chat)
+            ->firstOrFail();
+        $chat->messages = $chat->messages->reverse();
+
+        $data['html'] = view('front.shared.message-card', compact('chat'))->render(); 
+        $data['first_message_id'] = $first_message_id;
+         
+        if($chat->messages->isNotEmpty()){
+            $data['first_message_id'] = $chat->messages->first()->id;
+        }  
+        
+        return response()->json($data, 200);
+      
     }
 }
