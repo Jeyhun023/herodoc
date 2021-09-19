@@ -32,6 +32,9 @@ Route::post('/sendMessages/{chat}', [App\Http\Controllers\Front\MessageControlle
 
 //Account
 Route::get('/profile/{user}', [App\Http\Controllers\Front\UserController::class, 'show'])->name('user.show');
+Route::get('/account', [App\Http\Controllers\Front\UserController::class, 'account'])->name('user.account')->middleware('auth');
+Route::post('/account/save', [App\Http\Controllers\Front\UserController::class, 'save'])->name('user.account.save')->middleware('auth');
+Route::post('/account/pass', [App\Http\Controllers\Front\UserController::class, 'pass'])->name('user.account.pass')->middleware('auth');
 
 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('index');
@@ -39,4 +42,5 @@ Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search
 
 Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer');
 Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost');
+
 
