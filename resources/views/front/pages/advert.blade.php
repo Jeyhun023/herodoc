@@ -126,16 +126,30 @@
                                         </li>
                                     </ul>
                                 </article>
-                                <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
-                                    <button>Müraciət et</button>
-                                </a>
-                                <div class="mobileShow">
+                                @if($advert->user->id != auth()->id())
                                     <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
-                                    <button type="button" style="border-radius:40px">
-                                        Müraciət et
-                                    </button>
+                                        <button>Müraciət et</button>
                                     </a>
-                                </div>
+                                    <div class="contact-seller-wrapper" style="box-shadow: unset;border-radius: unset;background-color: unset;padding: unset;">
+                                        <a class="fit-button" href="#">Sifariş et</a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mobileShow" style="width:50%;left: 0">
+                                            <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
+                                                <button type="button" class="btn btn-info" style="border-radius:40px">
+                                                    Sifariş et
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <div class="mobileShow" style="width:50%">
+                                            <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
+                                                <button type="button" class="btn btn-success" style="border-radius:40px">
+                                                    Müraciət et
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <br>

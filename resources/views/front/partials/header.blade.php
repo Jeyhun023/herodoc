@@ -3,12 +3,12 @@
 
         <a class="navbar-brand" href="{{route('index')}}"><img src="/front/images/logo.png" alt=""></a>
 
-        <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+        <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search"  action="{{ route('search') }}">
             <div class="input-group">
-                <input type="text" class="form-control bg-white small" placeholder="Find Services..."
+                <input type="text" name="query" class="form-control bg-white small" placeholder="Xidmət axtar..."
                     aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-success" type="button">
+                    <button class="btn btn-success" type="submit">
                         <i class="fa fa-search fa-sm"></i>
                     </button>
                 </div>
@@ -24,12 +24,12 @@
 
                 <div class="dropdown-menu dropdown-menu-right p-3 shadow-sm animated--grow-in"
                     aria-labelledby="searchDropdown">
-                    <form class="form-inline mr-auto w-100 navbar-search">
+                    <form class="form-inline mr-auto w-100 navbar-search" action="{{ route('search') }}">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Find Services..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" name="query" class="form-control bg-light border-0 small"
+                                placeholder="Xidmət axtar..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="submit">
                                     <i class="fa fa-search fa-sm"></i>
                                 </button>
                             </div>

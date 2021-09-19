@@ -13,10 +13,10 @@
                     </h5>
                 </div>
                 <div class="homepage-search-form">
-                    <form class="form-noborder">
+                    <form class="form-noborder" action="{{ route('search') }}">
                         <div class="form-row">
                             <div class="col-lg-7 col-md-7 col-sm-12 form-group">
-                                <input type="text" placeholder="Xidmət axtar..."
+                                <input type="text" placeholder="Xidmət axtar..." name="query"
                                     class="form-control border-0 form-control-lg shadow-sm">
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-12 form-group">
