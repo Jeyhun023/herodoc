@@ -38,7 +38,7 @@ class UserController extends Controller
         if ($request->hasFile("image")) {
             File::delete($user->image);
             $path = \App\Models\File::storeFile('front/images/user', $request->file("image"));
-            $data['image'] = $path;
+            $data['image'] = '/'.$path;
         }else{
             $data['image'] = $request->old_image;
         }

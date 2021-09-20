@@ -40,7 +40,10 @@ Route::post('/account/pass', [App\Http\Controllers\Front\UserController::class, 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('index');
 Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');
 
-Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer');
-Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost');
+Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer')->middleware('auth');
+Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost')->middleware('auth');
+
+Route::get('/orders', [App\Http\Controllers\Front\OrderController::class, 'index'])->name('order')->middleware('auth');
+Route::post('/orders/{advert}/store', [App\Http\Controllers\Front\OrderController::class, 'store'])->name('order.store')->middleware('auth');
 
 

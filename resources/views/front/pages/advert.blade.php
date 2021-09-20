@@ -8,7 +8,7 @@
                     <div id="overview" class="seller-overview d-flex align-items-center">
                         <div class="user-profile-image d-flex">
                             <label class="profile-pict" for="profile_image">
-                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="">
+                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="" style="width: 32px;height: 32px;">
                             </label>
                             <div class="profile-name">
                                 <span class="user-status">
@@ -127,19 +127,20 @@
                                     </ul>
                                 </article>
                                 @if($advert->user->id != auth()->id())
+                                    <form method="POST" action="{{route('order.store', ['advert' => $advert->id])}}" id="orderPost">
+                                        @csrf
+                                    </form>
                                     <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
                                         <button>Müraciət et</button>
                                     </a>
                                     <div class="contact-seller-wrapper" style="box-shadow: unset;border-radius: unset;background-color: unset;padding: unset;">
-                                        <a class="fit-button" href="#">Sifariş et</a>
+                                        <a class="fit-button order" href="javascript:void(0)">Sifariş et</a>
                                     </div>
                                     <div class="row">
                                         <div class="mobileShow" style="width:50%;left: 0">
-                                            <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
-                                                <button type="button" class="btn btn-info" style="border-radius:40px">
-                                                    Sifariş et
-                                                </button>
-                                            </a>
+                                            <button type="button" class="btn btn-info order" style="border-radius:40px;background: linear-gradient(to right, #1B0A98 0%, #20B5B7 100%);">
+                                                Sifariş et
+                                            </button>
                                         </div>
                                         <div class="mobileShow" style="width:50%">
                                             <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
@@ -175,5 +176,35 @@
         </div>
 
     </div>
-@endsection
 
+    <div id="orderForm" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{$advert->name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Diqqət! Bu formu təsdiqlədiyiniz halda, əməkdaşlarımız sizinlə əlaqəyə keçəcək. Ödənişi bizə etdikdən sonra seçdiyiniz mütəxəssis işə başlayacaq. İş tamamlanmadığı halda, pulunuz tam halda sizə geri qaytarılacaq.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İmtina</button>
+                    <button type="button" class="btn btn-primary orderSubmit">Təsdiq</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+@push('js')
+<script>
+    $(document).ready(function(){
+        $(".order").click(function(){
+            $("#orderForm").modal('show');
+        });
+        $(".orderSubmit").click(function(){
+            $("#orderPost").submit();
+        });
+    });
+</script>
+@endpush
