@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="mb-3">Sifarişlərim</h2>
+                @if($orders->isNotEmpty())
                 <div class="tab-content osahan-table bg-white rounded shadow-sm px-3 pt-1">
                     <div class="tab-pane active" id="active">
                         <div class="table-responsive box-table mt-3">
@@ -57,6 +58,13 @@
                         </div>
                     </div>
                 </div>
+                @else 
+                    <div class="col-lg-12" 
+                        style="background-image: url(/front/images/empty.png);background-repeat: no-repeat;
+                        background-position: center;height: 350px;">
+                        <h4 style="text-align:center">Heç bir sifarişiniz yoxdur</h4>
+                    </div>
+                @endif
             </div>
         </div>
     </div><br><br>

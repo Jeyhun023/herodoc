@@ -26,6 +26,7 @@ class User extends Authenticatable
         'description',
         'education',
         'skills',
+        'languages',
         'city',
         'image',
         'email',

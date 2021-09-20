@@ -19,6 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('meta_desc')->nullable();
+            $table->integer('status')->default(1)->comment('1-Active; 0-Deactive');
+            $table->integer('sort');
             $table->timestamps();
             $table->softDeletes();
         });

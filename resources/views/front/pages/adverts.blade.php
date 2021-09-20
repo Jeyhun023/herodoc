@@ -10,11 +10,17 @@
         </div>
         <div class="container">
             <div class="row">
-                @foreach($adverts as $advert)
+                @forelse($adverts ?: [] as $advert)
                     <div class="col-md-3">
                         @include('front.shared.job-card', ['advert' => $advert])
                     </div>
-                @endforeach
+                @empty 
+                <div class="col-lg-12" 
+                    style="background-image: url(/front/images/empty.png);background-repeat: no-repeat;
+                    background-position: center;height: 350px;">
+                    <h4 style="text-align:center">Heçbir nəticə tapılmadı</h4>
+                </div>
+                @endforelse
             </div>
         </div>
     </div>

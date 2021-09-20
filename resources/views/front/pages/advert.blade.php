@@ -114,15 +114,17 @@
                                         <b class="delivery ml-3"><i class="fa fa-refresh" aria-hidden="true"></i> 3 Reviziya</b>
                                     </div>
                                     <ul class="features">
-                                        <li class="feature included"><i class="fa fa-check" aria-hidden="true"></i>Source
-                                            Fayllar
-                                        </li>
-                                        <li class="feature included"><i class="fa fa-check"
-                                                aria-hidden="true"></i>
+                                        <li class="feature included">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
                                             İstifadə qaydası
                                         </li>
-                                        <li class="feature included"><i class="fa fa-check" aria-hidden="true"></i>10
-                                            Müəllif hüquqları
+                                        <li class="feature included">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            Müəlliflik hüquqları
+                                        </li>
+                                        <li class="feature included">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            100% geri ödəmə
                                         </li>
                                     </ul>
                                 </article>

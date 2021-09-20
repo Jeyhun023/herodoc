@@ -75,19 +75,6 @@
                                 <div class="dropdown-notifications-item-content-details">Emily Fowler · 58m</div>
                             </div>
                         </a>
-                        <a class="dropdown-item dropdown-notifications-item" href="#!">
-                            <img class="dropdown-notifications-item-img" src="/front/images/user/s8.png">
-                            <div class="dropdown-notifications-item-content">
-                                <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                    laborum.</div>
-                                <div class="dropdown-notifications-item-content-details">Diane Chambers · 2d</div>
-                            </div>
-                        </a>
                         <a class="dropdown-item dropdown-notifications-footer" href="{{route("message.index")}}">Hamısını oxu</a>
                     </div>
                 </li>
@@ -153,19 +140,23 @@
                     </div>
                 </li>
             @else 
-            <li class="nav-item">
-                <a href="{{route('login')}}" style="font-size:18px;color:#20c997;">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    Giriş
-                </a>
-            </li>
-            <li class="nav-item">
-               
-                <a href="{{route('register')}}" style="font-size:18px;color:#20c997;margin-left:11px;">
-                    /
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    Qeydiyyat
-                </a>
+            <li class="nav-item dropdown no-arrow no-caret dropdown-user">
+                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"
+                    href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"><img class="img-fluid" src="/front/images/user/no_photo.png"></a>
+                <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up"
+                    aria-labelledby="navbarDropdownUserImage">
+
+                    <a class="dropdown-item" href="{{route('login')}}" style="font-size:18px;color:#20c997;">
+                        <i class="fa fa-user" aria-hidden="true"></i>&nbsp
+                        Giriş
+                    </a>
+
+                    <a class="dropdown-item" href="{{route('register')}}" style="font-size:18px;color:#20c997;">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp
+                        Qeydiyyat
+                    </a>
+                </div>
             </li>
             @endif
         </ul>
@@ -181,17 +172,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Home
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="index.html">Home 1</a>
-                        <a class="dropdown-item" href="index2.html">Home 2</a>
-                        <a class="dropdown-item" href="index3.html">Home 3</a>
-                    </div>
-                </li>
+                @foreach($data['categories'] as $category)
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            {{$category->name}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                            @foreach($category->subcat as $subcat)
+                                <a class="dropdown-item" href="{{route('category', ['slug' => $subcat->slug])}}">{{$subcat->name}}</a>
+                            @endforeach
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <ul class="navbar-nav ml-auto">

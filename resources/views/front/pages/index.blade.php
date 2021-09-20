@@ -30,10 +30,10 @@
                 <div class="popular">
                     <span class="text-body-2">Axtarışlar</span>
                     <ul>
-                        <li><a href="#" class="text-body-2">motivasiya</a></li>
-                        <li><a href="#" class="text-body-2">referans</a></li>
-                        <li><a href="#" class="text-body-2">müraciət</a></li>
-                        <li><a href="#" class="text-body-2">təqaüd imkanları</a></li>
+                        <li><a href="{{ route('search', 'query=motivasiya') }}" class="text-body-2">motivasiya</a></li>
+                        <li><a href="{{ route('search', 'query=referans') }}" class="text-body-2">referans</a></li>
+                        <li><a href="{{ route('search', 'query=müraciət') }}" class="text-body-2">müraciət</a></li>
+                        <li><a href="{{ route('search', 'query=təqaüd') }}" class="text-body-2">təqaüd</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,6 +46,17 @@
 
 <div class="freelance-projects bg-white py-5">
     <div class="container">
+        <div class="owl-carousel">
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 30px">
         <div class="view_slider recommended">
             <div class="col-lg-12">
                 <h3>Sonuncu elanlar</h3>
@@ -61,3 +72,29 @@
     </div>
 </div>
 @endsection
+@push('css')
+<link rel="stylesheet" href="/front/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/front/css/owl.theme.default.min.css">
+@endpush
+@push('js')
+<script src="/front/js/owl.carousel.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items:4,
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplayHoverPause:true
+        });
+        $('.play').on('click',function(){
+            owl.trigger('play.owl.autoplay',[2000])
+        })
+        $('.stop').on('click',function(){
+            owl.trigger('stop.owl.autoplay')
+        })
+    });
+</script>
+@endpush

@@ -10,19 +10,10 @@
             </p>
             <ul class="social">
                 <li>
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true" style="margin-top:8px"></i></a>
+                    <a href="https://www.facebook.com/Herodocaz-226829909288281" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="margin-top:8px"></i></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true" style="margin-top:8px"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true" style="margin-top:8px"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true" style="margin-top:8px"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true" style="margin-top:8px"></i></a>
+                    <a href="https://www.instagram.com/herodoc.az/" target="_blank"><i class="fa fa-instagram" aria-hidden="true" style="margin-top:8px"></i></a>
                 </li>
             </ul>
         </div>

@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Pages
+Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('index');
+Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer')->middleware('auth');
+Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost')->middleware('auth');
+Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');
+Route::get('/category/{slug}', [App\Http\Controllers\Front\HomeController::class, 'category'])->name('category');
+
 //Auth
 Auth::routes();
 
@@ -35,15 +42,11 @@ Route::get('/profile/{user}', [App\Http\Controllers\Front\UserController::class,
 Route::get('/account', [App\Http\Controllers\Front\UserController::class, 'account'])->name('user.account')->middleware('auth');
 Route::post('/account/save', [App\Http\Controllers\Front\UserController::class, 'save'])->name('user.account.save')->middleware('auth');
 Route::post('/account/pass', [App\Http\Controllers\Front\UserController::class, 'pass'])->name('user.account.pass')->middleware('auth');
-
-
-Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('index');
-Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');
-
-Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer')->middleware('auth');
-Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost')->middleware('auth');
-
 Route::get('/orders', [App\Http\Controllers\Front\OrderController::class, 'index'])->name('order')->middleware('auth');
 Route::post('/orders/{advert}/store', [App\Http\Controllers\Front\OrderController::class, 'store'])->name('order.store')->middleware('auth');
+
+
+
+
 
 

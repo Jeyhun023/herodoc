@@ -22,10 +22,11 @@ class CreateUsersTable extends Migration
             $table->text('description')->nullable();
             $table->string('education')->nullable();
             $table->string('skills')->nullable();
+            $table->string('languages')->nullable();
             $table->string('city')->nullable();
             $table->integer('rate')->default(0);
             $table->enum('isFreelance', ['no','yes'])->default('no');
-            $table->string('image')->default('/front/images/user/no_photo.jpg');
+            $table->string('image')->default('/front/images/user/no_photo.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
