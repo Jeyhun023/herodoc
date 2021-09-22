@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => $advert->name, 'description' => $advert->short_desc, 'image' => $advert->image])
 @section('content')
     <div class="main-page py-5">
         <div class="container">

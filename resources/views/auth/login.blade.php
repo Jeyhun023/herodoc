@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => 'Giriş et - Herodoc', 'description' => 'E-mail və şifrənizi yazaraq hesabınıza giriş edə bilərsiniz'])
 @section('content')
 <div class="bg-white">
     <div class="container">
@@ -8,8 +8,6 @@
                     <div class="text-center mb-4">
                         <a href="{{route('index')}}"><img src="/front/images/logo.png" alt=""></a>
                         <h5 class="font-weight-bold mt-3">Giriş et</h5>
-                        <p class="text-muted">Don't miss your next opportunity. Sign in to stay updated on your
-                            professional world.</p>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

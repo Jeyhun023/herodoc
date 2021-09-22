@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => 'Freelancer ol - Herodoc', 'description' => 'Saytımızda freelancer olaraq fəaliyyət göstərmək üçün bu səhifədəki formu doldurun'])
 @section('content')
     <section class="py-5">
         <div class="container">

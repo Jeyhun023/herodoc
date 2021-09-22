@@ -19,6 +19,7 @@ Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::cla
 Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost')->middleware('auth');
 Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');
 Route::get('/category/{slug}', [App\Http\Controllers\Front\HomeController::class, 'category'])->name('category');
+Route::get('/tags/{tag}', [App\Http\Controllers\Front\HomeController::class, 'tags'])->name('tags');
 
 //Auth
 Auth::routes();
@@ -44,6 +45,7 @@ Route::post('/account/save', [App\Http\Controllers\Front\UserController::class, 
 Route::post('/account/pass', [App\Http\Controllers\Front\UserController::class, 'pass'])->name('user.account.pass')->middleware('auth');
 Route::get('/orders', [App\Http\Controllers\Front\OrderController::class, 'index'])->name('order')->middleware('auth');
 Route::post('/orders/{advert}/store', [App\Http\Controllers\Front\OrderController::class, 'store'])->name('order.store')->middleware('auth');
+Route::post('/orders/comment', [App\Http\Controllers\Front\OrderController::class, 'comment'])->name('order.comment')->middleware('auth');
 
 
 

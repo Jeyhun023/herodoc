@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\UserComment;
 use App\Models\Advert;
 use Illuminate\Support\Str;
 
@@ -40,4 +41,23 @@ class OrderController extends Controller
 
         return redirect()->route('order')->with(['success' => true]);
     }
+    
+    public function comment(Request $request)
+    {
+        $request->validate([
+            'rate' => 'required',
+            'order_id' => 'required'
+        ]);
+        $order = Order::where('id', $request->order_id)->where('user_id', auth()->id())->with(['advert.user'])->firstOrFail();
+        
+        UserComment::create([
+            'from_user_id' => auth()->id(),
+            'to_user_id' => $order->advert->user->id,
+            'rate' => $request->rate,
+            'content' => $request->content
+        ]);
+
+        return redirect()->back()->with(['success' => true]);
+    }
+
 }

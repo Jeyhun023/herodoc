@@ -67,4 +67,18 @@ class HomeController extends Controller
 
         return view('front.pages.adverts', compact('query', 'adverts'));
     }
+
+    public function tags($query)
+    {
+        $adverts = Advert::with(['user' => function($query){
+                $query->withCount('comments');
+            }])
+            ->orderBy('id', 'DESC')
+            ->where('tags','LIKE','%'.$query.'%')
+            ->orWhere('content','LIKE','%'.$query.'%')
+            ->orWhere('name','LIKE','%'.$query.'%')
+            ->paginate(12);
+       
+        return view('front.pages.adverts', compact('adverts','query'));
+    }
 }

@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => 'Profil - Herodoc', 'description' => 'Hesab məlumatlarınızız üzərində düzəliş edə bilərsiniz'])
 @section('content')
 <section class="py-5">
     <div class="container">
@@ -7,6 +7,11 @@
                 <div class="bg-white rounded shadow-sm sidebar-page-right">
                     <div>
                         <div class="p-3 border-bottom">
+                            @if($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <p style="color:red">{{ $error }}</p>
+                                @endforeach
+                            @endif
                             <form action="{{route('user.account.save')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="old_image" value="{{$user->image}}">

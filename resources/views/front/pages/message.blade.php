@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => $chat->opponent_user->user->fullname.' - Herodoc', 'description' => 'Seçdiyiniz insanla bu səhifədə sürətli çat sistemi ilə mesajlaşa bilərsiniz'])
 @section('content')
     <div class="py-5" style="padding-top:1rem!important">
         <div class="container">

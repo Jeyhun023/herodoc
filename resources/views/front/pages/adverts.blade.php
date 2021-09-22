@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => $query.' - Herodoc', 'description' => 'Axtardığınız məlumata nəticələri görə bilərsiniz'])
 @section('content')
 <div class="main-page best-selling">
     <div class="view_slider recommended pt-5">

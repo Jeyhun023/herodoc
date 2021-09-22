@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => 'Ana səhifə - Herodoc', 'description' => 'Sizi xaricdə təhsil ekspertləri ilə ən sürətli şəkildə birləşdirən ideal təhsil platforması'])
 @section('content')
 <section class="py-5 homepage-search-block position-relative">
     <div class="container">

@@ -17,8 +17,9 @@ class CreateUserCommentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('from_user_id');
             $table->unsignedBigInteger('to_user_id');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->integer('rate');
+            $table->integer('status')->default(0);
             $table->timestamps();
             $table->softDeletes();
             

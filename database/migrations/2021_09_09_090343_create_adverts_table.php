@@ -24,6 +24,7 @@ class CreateAdvertsTable extends Migration
             $table->string('delivery');
             $table->text('content');
             $table->string('short_desc');
+            $table->string('tags')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

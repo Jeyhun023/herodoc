@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => 'Qeydiyyat - Herodoc', 'description' => 'Qeydiyyat formunu dolduraraq platformamıza istifadəçi olaraq daxil ola bilərsiniz'])
 @section('content')
 <div class="bg-white">
     <div class="container">
@@ -8,7 +8,6 @@
                     <div class="text-center mb-4">
                         <a href="{{route('index')}}"><img src="/front/images/logo.png" alt=""></a>
                         <h5 class="font-weight-bold mt-3">Qeydiyyatdan keç</h5>
-                        <p class="text-muted">Make the most of your professional life</p>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

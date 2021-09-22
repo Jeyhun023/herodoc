@@ -28,12 +28,14 @@ class UserController extends Controller
 
     public function save(Request $request)
     {
-        $request->validate([
-            'fullname' => 'required',
-            'email' => 'required',
-            'username' => 'required'
-        ]);
         $user = auth()->user();
+
+        $request->validate([
+            'image' => ['sometimes', 'nullable', 'image', 'mimetypes:image/*', 'mimes:png,jpeg,jpg', 'max:2000'],
+            'fullname' => 'required',
+            'email' => 'required|email|max:255|unique:users,email,'.$user->id,
+            'username' => 'required|string|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u|unique:users,username,'.$user->id,
+        ]);
 
         if ($request->hasFile("image")) {
             File::delete($user->image);
@@ -55,9 +57,9 @@ class UserController extends Controller
     public function pass(Request $request)
     {
         $request->validate([
-            'old_pass' => 'required',
-            'new_pass' => 'required',
-            'new_pass_r' => 'required',
+            'old_pass' => 'required', 'string', 'min:6',
+            'new_pass' => 'required', 'string', 'min:6',
+            'new_pass_r' => 'required', 'string', 'min:6',
         ]);
         $user = auth()->user();
         if ($request->new_pass != $request->new_pass_r) {
