@@ -47,13 +47,15 @@
 <div class="freelance-projects bg-white py-5">
     <div class="container">
         <div class="owl-carousel">
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
-            <div style="width: 230px;height:150px;background-color:green"> Your Content </div>
+            <div style="background-color:white"> <img src="/front/images/flag/united_kingdom.png" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/germany.jpg" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/poland.png" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/italy.png" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/turkey.jpg" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/usa.jpg" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/hungary.png" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/korea.png" style="width:80px"> </div>
+            <div style="background-color:white"> <img src="/front/images/flag/china.jpg" style="width:80px"> </div>
         </div>
     </div>
     <div class="container" style="margin-top: 30px">
