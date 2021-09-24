@@ -40,6 +40,16 @@
             @if(auth()->check())
                 <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages"
+                        href="{{route('message.index')}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    {{-- <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages"
                         href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -76,7 +86,7 @@
                             </div>
                         </a>
                         <a class="dropdown-item dropdown-notifications-footer" href="{{route("message.index")}}">Hamısını oxu</a>
-                    </div>
+                    </div> --}}
                 </li>
                 <li class="nav-item dropdown no-arrow no-caret dropdown-user">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"

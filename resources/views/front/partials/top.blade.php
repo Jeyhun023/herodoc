@@ -7,7 +7,7 @@
     <meta name='description' content='{{$description}}'>
     <meta name="keywords" content="tehsil,tehsil platformasi,freelance platformasi,azerbaycan freelance,xaricde tehsil,tehsil sirketi,tehsil konsaltinq,avropada tehsil,amerikada tehsil,herodoc,herodocaz">
     <link rel="canonical" href="{{ app()->getLocale() }}">
-    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('/front/images/favicon.png')}}">
     <meta name='abstract' content='Sizi ekspertlərlə birləşdirən ideal təhsil platforması'>
     <meta name='language' content='az'>
     <meta name='robots' content='index,follow'>

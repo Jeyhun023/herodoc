@@ -85,7 +85,7 @@
                                             rows="2" name="content" id="sendMessage"></textarea>
                                     </div>
                                     <div class="p-3 d-flex align-items-center">
-                                        <div class="overflow-hidden">
+                                        {{-- <div class="overflow-hidden">
                                             <button type="button" class="btn btn-light btn-sm rounded">
                                                 <i class="mdi mdi-image"></i>
                                             </button>
@@ -95,7 +95,7 @@
                                             <button type="button" class="btn btn-light btn-sm rounded">
                                                 <i class="mdi mdi-camera"></i>
                                             </button>
-                                        </div>
+                                        </div> --}}
                                         <span class="ml-auto">
                                             <button type="submit" class="btn btn-success btn-sm rounded" id="sendButton">
                                                 <i class="mdi mdi-send"></i> Göndər
@@ -113,4 +113,13 @@
 @endsection
 @push('js')
 <script src="/front/js/chat.js" type="text/javascript"></script>
+<script>
+    $("#sendMessage").keypress(function (e) {
+        if(e.which === 13 && !e.shiftKey) {
+            e.preventDefault();
+        
+            $(this).closest("form").submit();
+        }
+    });
+</script>
 @endpush
