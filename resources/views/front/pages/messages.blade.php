@@ -28,11 +28,21 @@
 @push('js')
 <script>
 (function worker() {
+  let html = `<br><div class="col-lg-12" style="background-image: url(/front/images/empty.png);background-repeat: no-repeat;`+
+    `background-position: center;height: 350px;">`+
+        `<h4 style="text-align:center">Heç bir mesajınız yoxdur</h4>`+
+    `</div>`;
   $.ajax({
     url: '/loadChats', 
     success: function(data) {
       $('#loading').remove();
-      $('#chats').html(data);
+      if(data == ""){
+        if($('#chats').html() != html){
+            $('#chats').html(html);
+        }
+      }else{
+        $('#chats').html(data);
+      }
     },
     complete: function() {
       setTimeout(worker, 7000);
