@@ -21,6 +21,10 @@ Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search
 Route::get('/category/{slug}', [App\Http\Controllers\Front\HomeController::class, 'category'])->name('category');
 Route::get('/tags/{tag}', [App\Http\Controllers\Front\HomeController::class, 'tags'])->name('tags');
 
+Route::get('/aboutus', [App\Http\Controllers\Front\HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/privacy-and-policy', [App\Http\Controllers\Front\HomeController::class, 'privacyandpolicy'])->name('privacyandpolicy');
+Route::get('/usage-rules', [App\Http\Controllers\Front\HomeController::class, 'usagerules'])->name('usagerules');
+
 //Auth
 Auth::routes();
 Route::post('/password/email', [App\Http\Controllers\Auth\ResetPasswordController::class, 'tokenRequest'])->name('password.email')->middleware('guest');

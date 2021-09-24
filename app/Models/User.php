@@ -54,6 +54,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $dispatchesEvents = [
+        'created' => \App\Events\NewUserRegisteredEvent::class
+    ];
+    
     public function comments()
     {
         return $this->hasMany(UserComment::class, 'to_user_id', 'id');

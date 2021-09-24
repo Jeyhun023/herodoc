@@ -43,8 +43,8 @@ class WelcomeMail extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->subject('Hello & Welcome!')
-        ->from('no-reply@abysshub.com', 'Abysshub')
+        return (new MailMessage)->subject('Xoşgəldiniz')
+        ->from('no-reply@herodoc.az', 'Herodoc')
         ->view('vendor.notifications.welcome', ['user' => $this->user]);
     }
 
