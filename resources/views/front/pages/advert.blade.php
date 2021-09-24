@@ -37,7 +37,7 @@
                         <img class="img-fluid" src="{{$advert->image}}" />
                     </div>
                     <div id="description" class="description">
-                        <p>{{$advert->content}}</p>
+                        <p>{! $advert->content !}</p>
                     </div>
                     <ul class="metadata"></ul>
 
