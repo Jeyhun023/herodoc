@@ -47,15 +47,51 @@
 <div class="freelance-projects bg-white py-5">
     <div class="container">
         <div class="owl-carousel">
-            <div style="background-color:white"> <img src="/front/images/flag/united_kingdom.png" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/germany.jpg" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/poland.png" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/italy.png" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/turkey.jpg" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/usa.jpg" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/hungary.png" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/korea.png" style="width:80px"> </div>
-            <div style="background-color:white"> <img src="/front/images/flag/china.jpg" style="width:80px"> </div>
+            <div style="background-color:white">
+                <a href="{{route('tags', ['tag' => "Amerika"])}}">
+                    <img src="/front/images/flag/usa.jpg" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Almaniya"])}}">
+                    <img src="/front/images/flag/germany.jpg" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "İngiltərə"])}}">
+                    <img src="/front/images/flag/united_kingdom.png" style="width:80px">
+                </a> 
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Macarıstan"])}}">
+                    <img src="/front/images/flag/hungary.png" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Polşa"])}}">
+                    <img src="/front/images/flag/poland.png" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white">
+                <a href="{{route('tags', ['tag' => "İtaliya"])}}">
+                    <img src="/front/images/flag/italy.png" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Türkiyə"])}}">
+                    <img src="/front/images/flag/turkey.jpg" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Çin"])}}">
+                    <img src="/front/images/flag/china.jpg" style="width:80px"> 
+                </a>
+            </div>
+            <div style="background-color:white"> 
+                <a href="{{route('tags', ['tag' => "Koreya"])}}">
+                    <img src="/front/images/flag/korea.png" style="width:80px"> 
+                </a>
+            </div>
         </div>
     </div>
     <div class="container" style="margin-top: 30px">
