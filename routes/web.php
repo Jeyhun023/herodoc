@@ -23,6 +23,9 @@ Route::get('/tags/{tag}', [App\Http\Controllers\Front\HomeController::class, 'ta
 
 //Auth
 Auth::routes();
+Route::post('/password/email', [App\Http\Controllers\Auth\ResetPasswordController::class, 'tokenRequest'])->name('password.email')->middleware('guest');
+Route::get('/password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->middleware('guest');
+Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update')->middleware('guest');
 
 //Jobs
 Route::get('/advertisements', [App\Http\Controllers\Front\AdvertController::class, 'index'])->name('advert.index');

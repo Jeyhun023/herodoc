@@ -14,6 +14,11 @@
                             {{ session('status') }}
                         </p>
                     @endif
+                    @if(session('error'))
+                        <p style="color:red">
+                            {{ session('error') }}
+                        </p>
+                    @endif
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
                         <div class="form-group">

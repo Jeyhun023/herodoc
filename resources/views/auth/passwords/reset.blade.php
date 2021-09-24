@@ -9,6 +9,11 @@
                         <a href="{{route('index')}}"><img src="/front/images/logo.png" alt=""></a>
                         <h5 class="font-weight-bold mt-3">Şifrənin bərpası</h5>
                     </div>
+                    @if(session('error'))
+                        <p style="color:red">
+                            {{ session('error') }}
+                        </p>
+                    @endif
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">

@@ -41,7 +41,7 @@ return [
     'distinct'       => ' :attribute dublikat qiymətlidir',
     'email'          => ' :attribute doğru email formatında deyil',
     'ends_with'      => 'The :attribute must end with one of the following: :values.',
-    'exists'         => ' seçilmiş :attribute yanlışdır',
+    'exists'         => ' :attribute yanlışdır',
     'file'           => ' :attribute fayl formatında olmalıdır',
     'filled'         => ' :attribute qiyməti olmalıdır',
     'gt'             => [

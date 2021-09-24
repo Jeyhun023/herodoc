@@ -18,5 +18,6 @@ return [
     'throttled' => 'Zəhmət olmasa yenidən cəhd etməzdən əvvəl gözləyin',
     'token' => 'Şifrə yeniləmə linki doğru deyil',
     'user' => "Yazdığınız e-mail ünvanına malik istifadəçi yoxdur",
+    'pass_conf' => "Şifrə təkrarı yanlışdır",
 
 ];
