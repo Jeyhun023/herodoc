@@ -53,6 +53,9 @@ Route::post('/account/pass', [App\Http\Controllers\Front\UserController::class, 
 Route::get('/orders', [App\Http\Controllers\Front\OrderController::class, 'index'])->name('order')->middleware('auth');
 Route::post('/orders/{advert}/store', [App\Http\Controllers\Front\OrderController::class, 'store'])->name('order.store')->middleware('auth');
 Route::post('/orders/comment', [App\Http\Controllers\Front\OrderController::class, 'comment'])->name('order.comment')->middleware('auth');
+Route::get('/account/adverts', [App\Http\Controllers\Front\UserController::class, 'adverts'])->name('account.adverts')->middleware('auth');
+Route::get('/account/adverts/create', [App\Http\Controllers\Front\UserController::class, 'advertCreate'])->name('account.adverts.create')->middleware('auth');
+Route::post('/account/adverts/create', [App\Http\Controllers\Front\UserController::class, 'advertStore'])->name('account.adverts.store')->middleware('auth');
 
 
 

@@ -19,4 +19,13 @@ class File extends Model
 
         return $url;
     }
+
+    public static function resizeFile(string $path, $file, $size): string
+    {
+        $url = $path. "/" . Str::random(64) . "." . $file->getClientOriginalExtension();
+        $resize = Image::make($file)->resize($size[0],$size[1]);
+        $resize->save(public_path($url));
+
+        return $url;
+    }
 }

@@ -11,7 +11,7 @@ class Advert extends Model
 
     public $table = "adverts";
     
-    protected $fillable = ['category_id','user_id','name', 'slug', 'image', 'price', 'delivery', 'content'];
+    protected $fillable = ['category_id','user_id','name', 'short_desc', 'slug', 'image', 'price', 'delivery', 'content'];
 
     public function user()
     {
