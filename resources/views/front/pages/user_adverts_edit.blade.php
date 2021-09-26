@@ -26,7 +26,7 @@
                                     <div class="col-md-8">
                                         <img src="{{$advert->image}}" width="150">
                                         <input type="file" name="image"
-                                            class="form-control font-weight-bold text-muted" required>
+                                            class="form-control font-weight-bold text-muted">
                                     </div>
                                 </div>
                                 <div class="row d-flex align-items-center form-group">
