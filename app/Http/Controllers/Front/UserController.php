@@ -41,7 +41,6 @@ class UserController extends Controller
         ]);
 
         if ($request->hasFile("image")) {
-            File::delete($user->image);
             $path = \App\Models\File::storeFile('front/images/user', $request->file("image"));
             $data['image'] = '/'.$path;
         }else{
@@ -142,5 +141,48 @@ class UserController extends Controller
         ]);
        
         return redirect()->route('advert.show', ['slug' => $advert->slug]);
+    }
+
+    public function advertEdit(Advert $advert)
+    {
+        if(auth()->user()->isFreelance == "no"){
+            abort(404);
+        }
+        $categories = Category::where(['status' => true,'parent_id' => null])
+        ->with('subcat')
+        ->orderBy('sort', 'ASC')
+        ->get();
+        return view('front.pages.user_adverts_edit', compact('advert','categories'));
+    }
+
+    public function advertUpdate(Advert $advert, Request $request)
+    {
+        if(auth()->user()->isFreelance == "no"){
+            abort(404);
+        }
+        $request->validate([
+            'image' => ['nullable', 'sometimes', 'image', 'mimetypes:image/*', 'mimes:png,jpeg,jpg', 'max:5000'],
+            'name' => 'required',
+            'price' => 'required',
+            'delivery' => 'required',
+            'category_id' => 'required',
+            'short_desc' => 'required',
+            'content' => 'required',
+        ]);
+        if ($request->hasFile("image")) {
+            File::delete($advert->image);
+            $path = \App\Models\File::storeFile('front/images/list', $request->file("image"), [800, 615]);
+            $image = '/'.$path;
+            $advert->image = $image;
+        }
+        $advert->name = $request->name;
+        $advert->price = $request->price;
+        $advert->delivery = $request->delivery;
+        $advert->category_id = $request->category_id;
+        $advert->short_desc = $request->short_desc;
+        $advert->content = $request->content;
+        $advert->save();
+
+        return redirect()->back()->with('success', true);
     }
 }
