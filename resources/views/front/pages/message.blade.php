@@ -121,7 +121,7 @@
           }
       });
    });
-   Pusher.logToConsole = true;
+
     var pusher = new Pusher('72ea4455191aff24cbea', {
         authEndpoint: "/broadcasting/auth",
         auth: { headers: { "X-CSRF-Token": "{{csrf_token()}}" } },
