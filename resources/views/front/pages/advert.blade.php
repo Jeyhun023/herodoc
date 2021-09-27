@@ -187,7 +187,8 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Diqqət! Bu formu təsdiqlədiyiniz halda, əməkdaşlarımız sizinlə əlaqəyə keçəcək. Ödənişi bizə etdikdən sonra seçdiyiniz mütəxəssis işə başlayacaq. İş tamamlanmadığı halda, pulunuz tam halda sizə geri qaytarılacaq.</p>
+                    <p>Günbəgün böyüyən Herodoc ailəsinin sifarişçiləri arasında sizi də görməyə şad olduq!</p>
+                    <p><b>Diqqət!</b> Bu formu təsdiqlədikdən sonra əməkdaşlarımızın sizinlə əlaqəyə keçməsi və ödəmə prosesinin başladılması təmin ediləcək, müvafiq elan üzrə mütəxəssis tərəfindən fəaliyyət başladılacaqdır. Formu təsdiqləməniz saytın istifadə qaydaları və şərtlərlə razılaşmanızı da təsdiqləyəcəkdir, qaydalar və şərtlərlə <a href="{{ route('privacyandpolicy') }}" target="_blank">buradan</a> tanış ola bilərsiniz.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">İmtina</button>
