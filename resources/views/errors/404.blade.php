@@ -1,4 +1,4 @@
-@extends('front.partials.app')
+@extends('front.partials.app', ['title' => '404 Xəta baş verdi', 'description' => 'Axtardığınız səhifə tapılmadı'])
 @section('content')
 <section class="py-5 bg-white border-top border-bottom">
     <div class="container">

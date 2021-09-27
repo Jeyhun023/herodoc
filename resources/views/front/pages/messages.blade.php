@@ -10,10 +10,30 @@
                         <div class="border-right col-lg-12 col-xl-12 px-0">
                             <div class="osahan-chat-left">
                                 <div class="osahan-chat-list">
-                                    <div id="loading" style="text-align:center;margin-top:25px;">
-                                        <svg class='spinner' viewBox='0 0 100 100' width='350' height='250'><circle cx='50' cy='50' r='42' transform='rotate(-90,50,50)' /></svg>
-                                    </div>
-                                    <div id="chats" style="height: 500px;"></div>
+                                    @forelse($chats ?: [] as $chat)
+                                      <a href="{{route('chat.check', ['user' => $chat['opponent_user']->id ])}}">
+                                          <div class="p-3 d-flex align-items-center border-bottom osahan-post-header overflow-hidden">
+                                              <div class="dropdown-list-image mr-3">
+                                                  <img class="rounded-circle" src="{{$chat['opponent_user']->image}}" alt="">
+                                              </div>
+                                              <div class="font-weight-bold mr-1 overflow-hidden">
+                                                  <div class="text-truncate">{{$chat['opponent_user']->fullname}}</div>
+                                                  <div class="small text-truncate overflow-hidden text-black-50">
+                                                      <i class="mdi mdi-check text-primary"></i> {{$chat['last_message']?->content}}
+                                                  </div>
+                                              </div>
+                                              <span class="ml-auto mb-auto">
+                                                  <div class="text-right text-muted pt-1 small">{{$chat['last_activity']}}</div>
+                                              </span>
+                                          </div>
+                                      </a>
+                                    @empty 
+                                        <br>
+                                        <div class="col-lg-12" style="background-image: url(/front/images/empty.png);background-repeat: no-repeat;
+                                            background-position: center;height: 350px;">
+                                            <h4 style="text-align:center">Heç bir mesajınız yoxdur</h4>
+                                        </div>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
@@ -25,29 +45,3 @@
     </div>
 </div>
 @endsection
-@push('js')
-<script>
-(function worker() {
-  let html = `<br><div class="col-lg-12" style="background-image: url(/front/images/empty.png);background-repeat: no-repeat;`+
-    `background-position: center;height: 350px;">`+
-        `<h4 style="text-align:center">Heç bir mesajınız yoxdur</h4>`+
-    `</div>`;
-  $.ajax({
-    url: '/loadChats', 
-    success: function(data) {
-      $('#loading').remove();
-      if(data == ""){
-        if($('#chats').html() != html){
-            $('#chats').html(html);
-        }
-      }else{
-        $('#chats').html(data);
-      }
-    },
-    complete: function() {
-      setTimeout(worker, 7000);
-    }
-  });
-})();
-</script>
-@endpush

@@ -8,6 +8,8 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Event;
 use App\Events\NewUserRegisteredEvent;
 use App\Listeners\SendWelcomeMailListener;
+use App\Events\NewChatMessageEvent;
+use App\Listeners\SendMessageNotificationListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,9 @@ class EventServiceProvider extends ServiceProvider
         NewUserRegisteredEvent::class => [
             SendWelcomeMailListener::class
         ],
+        NewChatMessageEvent::class => [
+            SendMessageNotificationListener::class
+        ]
     ];
 
     /**

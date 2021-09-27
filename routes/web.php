@@ -35,15 +35,13 @@ Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordControlle
 Route::get('/advertisements', [App\Http\Controllers\Front\AdvertController::class, 'index'])->name('advert.index');
 Route::get('/advertisements/{slug}', [App\Http\Controllers\Front\AdvertController::class, 'show'])->name('advert.show');
 
-//Messages
-Route::get('/messages', [App\Http\Controllers\Front\MessageController::class, 'index'])->name('message.index');
-Route::get('/loadChats', [App\Http\Controllers\Front\MessageController::class, 'loadChats'])->name('message.loadChats');
-Route::get('/applyChat/{user}', [App\Http\Controllers\Front\MessageController::class, 'applyChat'])->name('message.applyChat');
-
-Route::get('/messages/{chat}', [App\Http\Controllers\Front\MessageController::class, 'show'])->name('message.show');
-Route::get('/loadMessages/{chat}/{first_message_id}', [App\Http\Controllers\Front\MessageController::class, 'loadMessages'])->name('message.loadMessages');
-Route::get('/lastMessages/{chat}/{last_message_id}', [App\Http\Controllers\Front\MessageController::class, 'lastMessages'])->name('message.lastMessages');
-Route::post('/sendMessages/{chat}', [App\Http\Controllers\Front\MessageController::class, 'sendMessages'])->name('message.sendMessages');
+//Chat
+Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function ($router) {
+    Route::get('/', [App\Http\Controllers\Front\ChatController::class, 'chats'])->name('message.index');
+    Route::get('/{user}/check', [App\Http\Controllers\Front\ChatController::class, 'check'])->name('chat.check');
+    Route::get('/{chat}/{limit}/load', [App\Http\Controllers\Front\ChatController::class, 'loadMessage']); 
+    Route::post('/{chat}/send', [App\Http\Controllers\Front\ChatController::class, 'sendMessage'])->name('message.sendMessages');
+});
 
 //Account
 Route::get('/profile/{user}', [App\Http\Controllers\Front\UserController::class, 'show'])->name('user.show');

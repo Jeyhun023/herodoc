@@ -77,14 +77,4 @@ class User extends Authenticatable
     {
         return Cache::has('user-is-online-' . $this->id);
     }
-    
-    public function chat_users()
-    {
-        return $this->hasMany(ChatUser::class);
-    }
-
-    public function chat_user()
-    {
-        return $this->hasOne(ChatUser::class);
-    }
 }

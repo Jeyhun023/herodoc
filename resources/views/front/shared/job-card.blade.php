@@ -9,7 +9,7 @@
             </span>
             <span class="seller-name">
                 <a style="height: 40px;margin-top: 8px;overflow: hidden;" href="{{route('advert.show', ['slug' => $advert->slug])}}" tabindex="-1">{{substr($advert->name, 0, 58)}}@if(strlen($advert->name) > 58)...@endif</a>
-                <span class="level hint--top level-one-seller">{{$advert->user->jobname}}</span>
+                <span class="level hint--top level-one-seller">{{$advert->user->fullname}}</span>
             </span>
         </div>
         <h3 style="height: 42px;overflow: hidden;">{{substr($advert->short_desc, 0, 68)}}@if(strlen($advert->short_desc) > 68)...@endif</h3>
