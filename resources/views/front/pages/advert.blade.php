@@ -145,7 +145,7 @@
                                             </button>
                                         </div>
                                         <div class="mobileShow" style="width:50%">
-                                            <a href="{{route('chat.check, ['user' => $advert->user->id])}}">
+                                            <a href="{{route('chat.check', ['user' => $advert->user->id])}}">
                                                 <button type="button" class="btn btn-success" style="border-radius:40px">
                                                     Müraciət et
                                                 </button>
