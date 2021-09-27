@@ -132,7 +132,7 @@
                                     <form method="POST" action="{{route('order.store', ['advert' => $advert->id])}}" id="orderPost">
                                         @csrf
                                     </form>
-                                    <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
+                                    <a href="{{route('chat.check', ['user' => $advert->user->id])}}">
                                         <button>Müraciət et</button>
                                     </a>
                                     <div class="contact-seller-wrapper" style="box-shadow: unset;border-radius: unset;background-color: unset;padding: unset;">
@@ -145,7 +145,7 @@
                                             </button>
                                         </div>
                                         <div class="mobileShow" style="width:50%">
-                                            <a href="{{route('message.applyChat', ['user' => $advert->user->id])}}">
+                                            <a href="{{route('chat.check, ['user' => $advert->user->id])}}">
                                                 <button type="button" class="btn btn-success" style="border-radius:40px">
                                                     Müraciət et
                                                 </button>
