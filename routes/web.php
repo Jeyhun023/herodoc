@@ -40,7 +40,7 @@ Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function ($router) {
     Route::get('/', [App\Http\Controllers\Front\ChatController::class, 'chats'])->name('message.index');
     Route::get('/{user}/check', [App\Http\Controllers\Front\ChatController::class, 'check'])->name('chat.check');
     Route::get('/{chat}/{limit}/load', [App\Http\Controllers\Front\ChatController::class, 'loadMessage']); 
-    Route::post('/{chat}/send', [App\Http\Controllers\Front\ChatController::class, 'sendMessage'])->name('message.sendMessages');
+    Route::post('/{chat}/send', [App\Http\Controllers\Front\ChatController::class, 'sendMessage'])->name('message.sendMessages')->middleware('throttle:30,1');
 });
 
 //Account
