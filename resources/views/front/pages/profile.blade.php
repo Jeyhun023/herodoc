@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="buttons-wrapper">
-                            <a href="{{route('message.applyChat', ['user' => $user->id])}}"
+                            <a href="{{route('chat.check', ['user' => $user->id])}}"
                                 class="btn-lrg-standard btn-contact-me js-contact-me js-open-popup-join">Müraciət et</a>
                         </div>
                         @if($user->isFreelance == "yes")
