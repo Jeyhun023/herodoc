@@ -20,6 +20,11 @@ class HomeController extends Controller
         return view('front.pages.index', compact('adverts'));
     }
 
+    public function privacyandpolicy()
+    {
+        return view('front.pages.privacy_policy');
+    }
+
     public function search()
     {
         $query = request()->input('query');

@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label class="mb-1">
                                 <input type="checkbox" checked disabled>
-                                <a href="#">Qaydalar və şərtlər</a> ilə razıyam
+                                <a href="{{ route('privacyandpolicy') }}" target="_blank">Qaydalar və şərtlər</a> ilə razıyam
                             </label>
                         </div>
                         <button class="btn btn-success btn-block text-uppercase" type="submit">QEYDİYYAT</button>
