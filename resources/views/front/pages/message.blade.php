@@ -130,7 +130,6 @@
 
     var channel = pusher.subscribe('private-chat-{{$chat["id"]}}');
     channel.bind('new-message', function(data) {
-        console.log(data);
         var now = new Date(),
             time = ("0" + now.getHours()).slice(-2) + ":" + ("0" + now.getMinutes()).slice(-2);
         if(data['chatMessage']['user_id'] == {{$user->id}}){
