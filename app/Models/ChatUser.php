@@ -31,6 +31,6 @@ class ChatUser extends Model
 
     public function last_message()
     {
-        return $this->hasOne(ChatMessage::class, 'chat_id', 'id')->latest('id')->take(1);
+        return $this->hasOne(ChatMessage::class, 'chat_id', 'id')->latest('id');
     }
 }

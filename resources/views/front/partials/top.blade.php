@@ -38,7 +38,15 @@
     <meta name='og:region' content='Baku'>
     <meta name='og:country-name' content='Azerbaijan'>
     <meta name='og:type' content='store'>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ76F8F0XT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-PJ76F8F0XT');
+    </script>
     <link rel="icon" type="image/png" href="/front/images/favicon.png">
     <link href="/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/front/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">

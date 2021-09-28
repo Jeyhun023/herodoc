@@ -22,7 +22,7 @@ $(".send_message").submit(function (e) {
               },
               beforeSend: function () {   
                   $('#sendMessage').val("");
-              },
+              }
           });
     return false;
 });

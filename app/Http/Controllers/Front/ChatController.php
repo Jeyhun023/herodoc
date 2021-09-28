@@ -14,6 +14,7 @@ use App\Http\Resources\Chat\ChatResource;
 use App\Http\Resources\Chat\MessageResource;
 use App\Http\Resources\Chat\MessageCollection;
 use App\Events\NewChatMessageEvent;
+use App\Events\MessagesEditEvent;
 
 class ChatController extends Controller
 {
@@ -30,7 +31,8 @@ class ChatController extends Controller
 
     public function chats()
     {
-        $chats = ChatUser::where('user_id_from', $this->user->id)
+        $chats = ChatUser::has('last_message')
+            ->where('user_id_from', $this->user->id)
             ->orWhere('user_id_to' , $this->user->id)
             ->with(['user_to','user_from','last_message'])
             ->orderBy('last_activity', 'DESC')
@@ -88,6 +90,7 @@ class ChatController extends Controller
         $newMessage->save();
         ChatUser::where('id', $chat)->update(['last_activity' => now()]);
         broadcast(new NewChatMessageEvent ($newMessage));
+        broadcast(new MessagesEditEvent ($newMessage->chat));
         $newMessage = (new MessageResource($newMessage))->resolve();
 
         return response()->json($newMessage, 200);
