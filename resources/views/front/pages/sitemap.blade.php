@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://herodoc.az/</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/login</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/register</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/avropa-uzre</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/asiya-uzre</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/amerika-uzre</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/motivasiya-mektubu</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/referans-m%C9%99ktubu</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/diplom-isi</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/serbest-is</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/ielts</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/toefl</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/acca</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/microsoft-office</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/green-card</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/category/viza-muracietleri</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/search?query=motivasiya</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/search?query=referans</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/search?query=m%C3%BCraci%C9%99t</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/search?query=t%C9%99qa%C3%BCd</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/Amerika</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/Almaniya</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/%C4%B0ngilt%C9%99r%C9%99</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/Macar%C4%B1stan</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/Pol%C5%9Fa</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/%C4%B0taliya</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/T%C3%BCrkiy%C9%99</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/%C3%87in</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/tags/Koreya</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/bursa-teknin-universitesi-muraciet-elani</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/elmir</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/motivasiya-mektubunun-yazilmasi</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/murad</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/ingilterenin-huddersfield-universiteti</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/visegrad-teqaud-programi</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/nasrinmammadova</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/stipendium-hungaricum</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/eltac</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/koreya-respublikasi-teqaud-proqrami</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/mammadova</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/polsa-universitetlerine-muraciet-paketi</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/bahman</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/macaristanin-corvinus-universitetinde-tehsil</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/password/reset</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/privacy-and-policy</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/wroclaw-texnologiya-universiteti</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/polsanin-kozminski-universitetinde-magistr-tehsili</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/litvanin-kaunas-universitetine-qebul</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/profile/alinovruzov</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://herodoc.az/advertisements/polsanin-poznan-universitetine-qebul</loc>
+  <lastmod>2021-09-28T10:34:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

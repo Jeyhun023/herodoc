@@ -20,9 +20,11 @@ Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::cl
 Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');
 Route::get('/category/{slug}', [App\Http\Controllers\Front\HomeController::class, 'category'])->name('category');
 Route::get('/tags/{tag}', [App\Http\Controllers\Front\HomeController::class, 'tags'])->name('tags');
-
-Route::get('/aboutus', [App\Http\Controllers\Front\HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/privacy-and-policy', [App\Http\Controllers\Front\HomeController::class, 'privacyandpolicy'])->name('privacyandpolicy');
+Route::get('/sitemap', function(){
+	return Response::view('front.pages.sitemap')->header('Content-Type', 'application/xml');
+});
+Route::get('/aboutus', [App\Http\Controllers\Front\HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/usage-rules', [App\Http\Controllers\Front\HomeController::class, 'usagerules'])->name('usagerules');
 
 //Auth
