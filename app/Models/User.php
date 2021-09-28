@@ -31,6 +31,7 @@ class User extends Authenticatable
         'image',
         'email',
         'password',
+        'mail_status'
     ];
 
     protected $guarded = ['isFreelance','rate'];

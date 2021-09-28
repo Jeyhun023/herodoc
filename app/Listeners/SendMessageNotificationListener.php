@@ -6,6 +6,7 @@ use App\Events\NewChatMessageEvent;
 use App\Notifications\Chat\NewMessageMail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use App\Models\User;
 
 class SendMessageNotificationListener
 {
@@ -18,14 +19,27 @@ class SendMessageNotificationListener
 
     public function handle(NewChatMessageEvent $event)
     {
-        if($event->chatMessage->chat->user_from->id == auth()->id()){
-            if(!$event->chatMessage->chat->user_to->isOnline()){
-                $event->chatMessage->chat->user_to->notify((new NewMessageMail($event->chatMessage->chat->user_to))->onQueue("default"));
+        $user_from = $event->chatMessage->chat->user_from;
+        $user_to = $event->chatMessage->chat->user_to;
+
+        if($user_from->id == auth()->id()){
+
+            if( !$user_from->mail_status){
+                User::where('id', $user_to->id)->update([
+                    'mail_status' => 1
+                ]);
+                $user_to->notify((new NewMessageMail($user_to))->onQueue("default"));
             }
+
         }else{
-            if(!$event->chatMessage->chat->user_from->isOnline()){
-                $event->chatMessage->chat->user_from->notify((new NewMessageMail($event->chatMessage->chat->user_from))->onQueue("default"));
+
+            if( !$user_from->mail_status){
+                User::where('id', $user_from->id)->update([
+                    'mail_status' => 1
+                ]);
+                $user_from->notify((new NewMessageMail($user_from))->onQueue("default"));
             }
+
         }
     }
 }

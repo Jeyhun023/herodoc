@@ -15,6 +15,7 @@ use App\Http\Resources\Chat\MessageResource;
 use App\Http\Resources\Chat\MessageCollection;
 use App\Events\NewChatMessageEvent;
 use App\Events\MessagesEditEvent;
+use App\Models\User;
 
 class ChatController extends Controller
 {
@@ -26,11 +27,15 @@ class ChatController extends Controller
             $this->user = auth()->user();
             return $next($request);
         });
-
     }
 
     public function chats()
     {
+        if($this->user->mail_status == 1){
+            User::where('id', $this->user->id)->update([
+                'mail_status' => 0
+            ]);
+        }
         $chats = ChatUser::has('last_message')
             ->where('user_id_from', $this->user->id)
             ->orWhere('user_id_to' , $this->user->id)
@@ -91,8 +96,9 @@ class ChatController extends Controller
         ChatUser::where('id', $chat)->update(['last_activity' => now()]);
         broadcast(new NewChatMessageEvent ($newMessage));
         broadcast(new MessagesEditEvent ($newMessage->chat));
-        $newMessage = (new MessageResource($newMessage))->resolve();
 
+        $newMessage = (new MessageResource($newMessage))->resolve();
+      
         return response()->json($newMessage, 200);
     }
     
