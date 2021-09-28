@@ -22,6 +22,9 @@ $(".send_message").submit(function (e) {
               },
               beforeSend: function () {   
                   $('#sendMessage').val("");
+              },
+              error: function (data) {   
+                  console.log(data);
               }
           });
     return false;

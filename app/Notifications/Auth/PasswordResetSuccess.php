@@ -40,7 +40,7 @@ class PasswordResetSuccess extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->subject('Password Changed')->view(
+        return (new MailMessage)->subject('Şifrəniz dəyişdirildi')->view(
             'vendor.notifications.password_changed'
         );
     }

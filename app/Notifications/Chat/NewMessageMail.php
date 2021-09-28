@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Notifications\Auth;
+namespace App\Notifications\Chat;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PasswordResetToken extends Notification implements ShouldQueue
+class NewMessageMail extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -16,11 +17,11 @@ class PasswordResetToken extends Notification implements ShouldQueue
      *
      * @return void
      */
-    private $token;
+    public $user;
 
-    public function __construct($token)
+    public function __construct(User $user)
     {
-        $this->token = $token;
+        $this->user = $user;
     }
 
     /**
@@ -42,9 +43,9 @@ class PasswordResetToken extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->subject('Şifrəni dəyiş')->view(
-            'vendor.notifications.password_request', ['token' => $this->token]
-        );
+        return (new MailMessage)->subject('Yeni mesaj var')
+        ->from('no-reply@herodoc.az', 'Herodoc')
+        ->view('vendor.notifications.new_message');
     }
 
     /**
