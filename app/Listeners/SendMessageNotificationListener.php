@@ -24,7 +24,7 @@ class SendMessageNotificationListener
 
         if($user_from->id == auth()->id()){
 
-            if( !$user_from->mail_status){
+            if(!$user_to->isOnline() && !$user_from->mail_status){
                 User::where('id', $user_to->id)->update([
                     'mail_status' => 1
                 ]);
@@ -33,7 +33,7 @@ class SendMessageNotificationListener
 
         }else{
 
-            if( !$user_from->mail_status){
+            if(!$user_from->isOnline() && !$user_from->mail_status){
                 User::where('id', $user_from->id)->update([
                     'mail_status' => 1
                 ]);
