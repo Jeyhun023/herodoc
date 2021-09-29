@@ -119,7 +119,7 @@ class UserController extends Controller
             'price' => 'required',
             'delivery' => 'required',
             'category_id' => 'required',
-            'short_desc' => 'required',
+            'short_desc' => 'required|max:255',
             'content' => 'required',
         ]);
 
@@ -166,7 +166,7 @@ class UserController extends Controller
             'price' => 'required',
             'delivery' => 'required',
             'category_id' => 'required',
-            'short_desc' => 'required',
+            'short_desc' => 'required|max:255',
             'content' => 'required',
         ]);
         if ($request->hasFile("image")) {

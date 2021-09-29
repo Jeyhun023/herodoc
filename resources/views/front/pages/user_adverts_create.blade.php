@@ -96,12 +96,12 @@
 </section>
 @endsection
 @push('js')
-<script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    CKEDITOR.replace('editor1', {
+      height: 400,
+      baseFloatZIndex: 10005,
+      removeButtons: 'PasteFromWord,Styles,Format'
+    });
 </script>
 @endpush

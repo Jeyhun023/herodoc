@@ -86,7 +86,8 @@
                                         <p class="text-muted font-weight-bold mb-0">KONTENT</p>
                                     </div>
                                     <div class="col-md-8">
-                                        <textarea id="editor" name="content">{{$advert->content}}</textarea>
+                                        {{-- <textarea id="editor" name="content">{{$advert->content}}</textarea> --}}
+                                        <textarea cols="80" id="editor1" name="content" rows="10" data-sample-short>{!! $advert->content !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="text-right">
@@ -102,12 +103,12 @@
 </section>
 @endsection
 @push('js')
-<script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    CKEDITOR.replace('editor1', {
+      height: 400,
+      baseFloatZIndex: 10005,
+      removeButtons: 'PasteFromWord,Styles,Format'
+    });
 </script>
 @endpush
