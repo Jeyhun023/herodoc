@@ -53,10 +53,11 @@ class ChatController extends Controller
         }
 
         $newChat = ChatUser::where(['user_id_from' => $this->user->id, 'user_id_to' => $request->user])
-            ->orWhere(['user_id_from' => $request->user, 'user_id_to' => $this->user->id])
+            ->orWhere(function ($query) use ($request) {
+                $query->where(['user_id_from' => $request->user, 'user_id_to' => $this->user->id]);
+            })
             ->with('messages.user', 'user_from', 'user_to')
             ->first();
-        
         if(!$newChat){
             $newChat = new ChatUser();
             $newChat->user_id_from = $this->user->id;

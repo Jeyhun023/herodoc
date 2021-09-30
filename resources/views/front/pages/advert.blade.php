@@ -8,7 +8,7 @@
                     <div id="overview" class="seller-overview d-flex align-items-center">
                         <div class="user-profile-image d-flex">
                             <label class="profile-pict" for="profile_image">
-                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="" style="width: 32px;height: 32px;">
+                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="" style="width: 32px;height: 32px;object-fit: cover;">
                             </label>
                             <div class="profile-name">
                                 <span class="user-status">
