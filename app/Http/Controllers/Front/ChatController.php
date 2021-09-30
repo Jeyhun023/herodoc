@@ -38,7 +38,9 @@ class ChatController extends Controller
         }
         $chats = ChatUser::has('last_message')
             ->where('user_id_from', $this->user->id)
-            ->orWhere('user_id_to' , $this->user->id)
+            ->orWhere(function ($query)  {
+                $query->where('user_id_to' , $this->user->id)->has('last_message');
+            })
             ->with(['user_to','user_from','last_message'])
             ->orderBy('last_activity', 'DESC')
             ->get();
