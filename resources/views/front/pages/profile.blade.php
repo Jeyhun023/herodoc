@@ -28,7 +28,7 @@
                             <div>
                                 <div class="user-profile-image">
                                     <label class="user-pict">
-                                        <img src="{{$user->image}}" class="img-fluid user-pict-img"
+                                        <img src="{{$user->image}}" class="img-fluid user-pict-img" style="width:90px;height:90px"
                                             alt="{{$user->username}}">
                                         <a href="#"
                                             class="user-badge-round user-badge-round-med locale-en-us top-rated-seller"></a></label>

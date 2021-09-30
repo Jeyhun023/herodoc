@@ -46,7 +46,7 @@ class ChatController extends Controller
         return view('front.pages.messages', compact('chats'));
     }
 
-    public function check(ChatCheckRequest $request)
+    public function check($user, ChatCheckRequest $request)
     {
         if($request->user == $this->user->id){
             abort(404);
