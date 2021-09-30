@@ -48,10 +48,12 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="buttons-wrapper">
-                            <a href="{{route('chat.check', ['user' => $user->id])}}"
-                                class="btn-lrg-standard btn-contact-me js-contact-me js-open-popup-join">Müraciət et</a>
-                        </div>
+                        @if($user->id != auth()->id())
+                            <div class="buttons-wrapper">
+                                <a href="{{route('chat.check', ['user' => $user->id])}}"
+                                    class="btn-lrg-standard btn-contact-me js-contact-me js-open-popup-join">Müraciət et</a>
+                            </div>
+                        @endif
                         @if($user->isFreelance == "yes")
                             <div class="user-stats-desc">
                                 <ul class="user-stats">

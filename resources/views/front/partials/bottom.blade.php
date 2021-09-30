@@ -1,4 +1,4 @@
-<script src="/front/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="/front/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="/front/js/custom.js" type="8ab1c1d667ac2228978f2afb-text/javascript"></script>
 <!--Start of Tawk.to Script-->

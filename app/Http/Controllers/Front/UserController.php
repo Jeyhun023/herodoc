@@ -51,8 +51,15 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->username = $request->username;
         $user->image = $data['image'];
+        if($user->isFreelance == "yes"){
+            $user->jobname = $request->jobname;
+            $user->education = $request->education;
+            $user->city = $request->city;
+            $user->description = $request->description;
+            $user->languages = implode(',', $request->languages);
+            $user->skills = $request->skills;
+        }
         $user->save();
-
         return redirect()->back()->with(['save' => "Məlumatlarınız dəyişdirildi"]);
     }
 
