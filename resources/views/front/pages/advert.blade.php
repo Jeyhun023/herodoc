@@ -58,7 +58,7 @@
                     <div class="profile-card">
                         <div class="user-profile-image d-flex">
                             <label class="profile-pict" for="profile_image">
-                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="">
+                                <img src="{{$advert->user->image}}" class="profile-pict-img img-fluid" alt="{{$advert->user?->username}}" style="object-fit: cover;">
                             </label>
                             <div class="right">
                                 <div class="profile-name">

@@ -5,7 +5,7 @@
     <div class="inner-wrapper">
         <div class="d-flex align-items-center">
             <span class="seller-image">
-                <img class="img-fluid" src="{{$advert->user?->image}}" alt="">
+                <img class="img-fluid" src="{{$advert->user?->image}}" alt="{{$advert->user?->username}}" style="object-fit: cover;">
             </span>
             <span class="seller-name">
                 <a style="height: 40px;margin-top: 8px;overflow: hidden;" href="{{route('advert.show', ['slug' => $advert->slug])}}" tabindex="-1">{{substr($advert->name, 0, 58)}}@if(strlen($advert->name) > 58)...@endif</a>
