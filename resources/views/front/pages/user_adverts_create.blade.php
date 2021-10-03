@@ -80,7 +80,7 @@
                                         <p class="text-muted font-weight-bold mb-0">KONTENT</p>
                                     </div>
                                     <div class="col-md-8">
-                                        <textarea id="editor" name="content"></textarea>
+                                        <textarea cols="80" id="editor1" name="content" rows="10" data-sample-short></textarea>
                                     </div>
                                 </div>
                                 <div class="text-right">
