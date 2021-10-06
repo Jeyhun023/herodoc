@@ -10,14 +10,14 @@
     <link rel="shortcut icon" href="{{asset('/front/images/favicon.png')}}">
     <meta name='abstract' content='Sizi ekspertlərlə birləşdirən ideal təhsil platforması'>
     <meta name='language' content='az'>
-    <meta name='robots' content='index,follow'>
-    <meta name='revised' content='24/09/2021'>
+    {{-- <meta name='robots' content='index,follow'> --}}
+    {{-- <meta name='revised' content='24/09/2021'> --}}
     <meta name='author' content='herodoc.az'>
     <meta name='copyright' content='Müəllif hüquqları qorunur'>
     <meta name='url' content='herodoc.az'>
-    <meta name='rating' content='General'>
-    <meta name='distribution' content='Global'>
-    <meta name='revisit-after' content='3 days'>
+    {{-- <meta name='rating' content='General'> --}}
+    {{-- <meta name='distribution' content='Global'> --}}
+    {{-- <meta name='revisit-after' content='3 days'> --}}
     <meta name='subtitle' content='HeroDoc'>
     <meta property="og:title" content="{{$title}}" />
     <meta property="og:description" content="{{$description}}">
@@ -37,7 +37,7 @@
     <meta name="twitter:image" content="{{ asset(isset($image) ? $image : 'front/images/logo.png')}}">
     <meta name='og:region' content='Baku'>
     <meta name='og:country-name' content='Azerbaijan'>
-    <meta name='og:type' content='store'>
+    <meta name='og:type' content='website'>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ76F8F0XT"></script>
     <script>

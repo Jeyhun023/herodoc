@@ -41,7 +41,7 @@ class OrderController extends Controller
 
         return redirect()->route('order')->with(['success' => true]);
     }
-    
+
     public function comment(Request $request)
     {
         $request->validate([
@@ -49,7 +49,7 @@ class OrderController extends Controller
             'order_id' => 'required'
         ]);
         $order = Order::where('id', $request->order_id)->where('user_id', auth()->id())->with(['advert.user'])->firstOrFail();
-        
+
         UserComment::create([
             'from_user_id' => auth()->id(),
             'to_user_id' => $order->advert->user->id,
