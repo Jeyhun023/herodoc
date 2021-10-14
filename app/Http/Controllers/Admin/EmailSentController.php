@@ -29,7 +29,6 @@ class EmailSentController extends Controller
         $emails = Email::all();
         foreach($emails as $email){
             $mail = Mail::to($email->email)->send(new InvitationLetter());
-            return "Finished successfully";
             echo $mail;
         }
         return "Finished successfully";
