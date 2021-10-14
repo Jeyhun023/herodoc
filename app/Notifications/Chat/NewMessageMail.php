@@ -13,18 +13,6 @@ class NewMessageMail extends Notification implements ShouldQueue
     use Queueable;
 
     /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public $user;
-
-    public function __construct(User $user)
-    {
-        $this->user = $user;
-    }
-
-    /**
      * Get the notification's delivery channels.
      *
      * @param  mixed  $notifiable
@@ -44,8 +32,7 @@ class NewMessageMail extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)->subject('Yeni mesaj var')
-        ->from('no-reply@herodoc.az', 'Herodoc')
-        ->view('vendor.notifications.new_message');
+            ->view('vendor.notifications.new_message');
     }
 
     /**
