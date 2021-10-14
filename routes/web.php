@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 //Pages
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('index');
+Route::get('/advert-slider', [App\Http\Controllers\Front\HomeController::class, 'getAdverts'])->name('getAdverts');
 Route::get('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerForm'])->name('become.freelancer')->middleware('auth');
 Route::post('/become-freelancer', [App\Http\Controllers\Front\HomeController::class, 'freelancerFormPost'])->name('become.freelancerFormPost')->middleware('auth');
 Route::get('/search', [App\Http\Controllers\Front\HomeController::class, 'search'])->name('search');

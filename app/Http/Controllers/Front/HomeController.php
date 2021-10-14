@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Advert;
 use App\Models\Category;
+use App\Models\User;
 use App\Models\FreelancerForm;
 
 use Illuminate\Support\Facades\Http;
@@ -16,8 +17,30 @@ class HomeController extends Controller
     {
         $adverts = Advert::with(['user' => function($query){
             $query->withCount('comments');
-        }])->orderBy('id', 'DESC')->limit(8)->get();
+        }])
+        ->orderByDesc(
+            User::select('rate')
+                ->whereColumn('id', 'adverts.user_id')
+                ->limit(1)
+        )
+        ->limit(8)->get();
         return view('front.pages.index', compact('adverts'));
+    }
+
+    public function getAdverts()
+    {
+        $adverts = Advert::with(['user' => function($query){
+            $query->withCount('comments');
+        }])
+        ->orderByDesc(
+            User::select('rate')
+                ->whereColumn('id', 'adverts.user_id')
+                ->limit(1)
+        )
+        ->paginate(8);
+        $data = view('front.shared.adverts-slider', compact('adverts'))->render();   
+       
+        return response()->json($data, 200);
     }
 
     public function privacyandpolicy()
@@ -68,7 +91,12 @@ class HomeController extends Controller
 
         $adverts = Advert::with(['user' => function($query){
             $query->withCount('comments');
-        }])->where('category_id', $category->id)->orderBy('id', 'DESC')->paginate(12);
+        }])->where('category_id', $category->id)
+        ->orderByDesc(
+            User::select('rate')
+                ->whereColumn('id', 'adverts.user_id')
+                ->limit(1)
+        )->paginate(12);
 
         return view('front.pages.adverts', compact('query', 'adverts'));
     }
@@ -78,7 +106,11 @@ class HomeController extends Controller
         $adverts = Advert::with(['user' => function($query){
                 $query->withCount('comments');
             }])
-            ->orderBy('id', 'DESC')
+            ->orderByDesc(
+                User::select('rate')
+                    ->whereColumn('id', 'adverts.user_id')
+                    ->limit(1)
+            )
             ->where('tags','LIKE','%'.$query.'%')
             ->orWhere('content','LIKE','%'.$query.'%')
             ->orWhere('name','LIKE','%'.$query.'%')

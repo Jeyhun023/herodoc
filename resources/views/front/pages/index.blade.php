@@ -98,13 +98,16 @@
         <div class="view_slider recommended">
             <div class="col-lg-12">
                 <h3>Sonuncu elanlar</h3>
-                <div class="row">
+                <div class="row adverts-slider">
                     @foreach($adverts as $advert)
                         <div class="col-lg-3">
                             @include('front.shared.job-card', ['advert' => $advert])
                         </div>
-                    @endforeach
+                    @endforeach  
                 </div>
+            </div>                                  
+            <div id="loading" style="text-align:center;display:none">
+                <svg class='spinner' viewBox='0 0 100 100' width='25' height='25'><circle cx='50' cy='50' r='42' transform='rotate(-90,50,50)' /></svg>
             </div>
         </div>
     </div>
@@ -117,6 +120,30 @@
 @push('js')
 <script src="/front/js/owl.carousel.js"></script>
 <script type="text/javascript">
+    var isLoad = true,
+        page = 2;
+
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() >= $('.adverts-slider').offset().top + $('.adverts-slider').
+            outerHeight() - window.innerHeight) {
+                if (isLoad){
+                    $('#loading').css('display', 'block');
+                    isLoad = false;
+                    $.ajax({
+                        url:'/advert-slider?page='+page,
+                        success: function(data) {
+                            if(data && data !=""){
+                                $('.adverts-slider').append(data);
+                                page ++;
+                                isLoad = true;
+                            }
+                            $('#loading').css('display', 'none');
+                        }
+                    });
+                }
+            }
+    });
+
     $(document).ready(function(){
         var owl = $('.owl-carousel');
         owl.owlCarousel({
