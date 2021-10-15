@@ -39,8 +39,15 @@ class EmailSentController extends Controller
     {
         $emails = Email2::where('id', '<', '8337')->get();
         foreach($emails as $email){
-            $mail = Email::create($email);
-            echo $mail;
+            $data['email'] = $email->email;
+            $data['fullname'] = $email->fullname;
+
+            $check = Email::where('email', $data['email'])->exists();
+
+            if(!$check){
+                $add = Email::create($data);
+                echo $add;
+            }
         }
         return "Finished successfully";
     }
