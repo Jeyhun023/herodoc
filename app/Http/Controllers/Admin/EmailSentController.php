@@ -37,10 +37,10 @@ class EmailSentController extends Controller
 
     public function reload()
     {
-        $emails = Email2::where('id', '<', '8337')->get();
+        $emails = Email2::where('id', '>', '8336')->get();
         foreach($emails as $email){
-            $data['email'] = $email->email;
-            $data['fullname'] = $email->fullname;
+            $data['email'] = $email->fullname;
+            $data['fullname'] = $email->email;
 
             $check = Email::where('email', $data['email'])->exists();
 
