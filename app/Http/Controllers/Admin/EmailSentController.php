@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Email;
+use App\Models\Email2;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InvitationLetter;
 
@@ -33,4 +34,15 @@ class EmailSentController extends Controller
         }
         return "Finished successfully";
     }
+
+    public function reload()
+    {
+        $emails = Email2::where('id', '<', '8337')->get();
+        foreach($emails as $email){
+            $mail = Email::create($email);
+            echo $mail;
+        }
+        return "Finished successfully";
+    }
+
 }
