@@ -54,7 +54,11 @@ class HomeController extends Controller
         $adverts = Advert::with(['user' => function($query){
                 $query->withCount('comments');
             }])
-            ->orderBy('id', 'DESC')
+            ->orderByDesc(
+                User::select('rate')
+                    ->whereColumn('id', 'adverts.user_id')
+                    ->limit(1)
+            )
             ->where('name','LIKE','%'.$query.'%')
             ->orWhere('content','LIKE','%'.$query.'%')
             ->paginate(12);
