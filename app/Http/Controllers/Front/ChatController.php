@@ -31,11 +31,6 @@ class ChatController extends Controller
 
     public function chats()
     {
-        if($this->user->mail_status == 1){
-            User::where('id', $this->user->id)->update([
-                'mail_status' => 0
-            ]);
-        }
         $chats = ChatUser::has('last_message')
             ->where('user_id_from', $this->user->id)
             ->orWhere(function ($query)  {
